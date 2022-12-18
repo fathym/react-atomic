@@ -1,12 +1,17 @@
-
+// import BasicObject from '@semanticjs/common';
+export class BasicHash {
+  [key: string]: any;
+}
 export class ExpanderService {
   /**
    * Used to get an expanded object of the properties that excludes the actual properties of the prototype.
    */
-  public static Expand<T extends { [key: string]: any; }>(obj: T): any {
+  public static Expand<T extends BasicHash>(type: new () => T, obj: T): any {
     const keys = Object.keys(obj);
 
-    const checkProps = [...this.localProps(obj), 'Expanded'];
+    const localProps = this.localProps<T>(type, obj);
+
+    const checkProps = [...localProps, 'Expanded'];
 
     const expandedKeys = keys.filter((k) => checkProps.indexOf(k) === -1);
 
@@ -22,9 +27,9 @@ export class ExpanderService {
    *}
    * @returns The list of properties from the local prototype
    */
-  private static localProps<T>(obj: T): string[] {
-    const proto = Object.getPrototypeOf(obj);
+  private static localProps<T extends BasicHash>(type: new () => T, obj: T): string[] {
+    // const proto = Object.getPrototypeOf(obj);
 
-    return Object.keys(new proto.constructor());
+    return Object.keys(new type());
   }
 }

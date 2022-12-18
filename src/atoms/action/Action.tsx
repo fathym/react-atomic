@@ -20,10 +20,7 @@ export class ActionProperties {
 
 class ActionState {}
 
-export default class Action extends React.Component<
-  ActionProperties,
-  ActionState
-> {
+class Action extends React.Component<ActionProperties, ActionState> {
   //# Fields
   protected actionHandler?: () => void;
 
@@ -35,7 +32,7 @@ export default class Action extends React.Component<
 
   //# Constructors
   /** Initialize the default property values based on constructor. */
-  static defaultProps = new ActionProperties();
+  public static defaultProps = new ActionProperties();
 
   constructor(props: ActionProperties) {
     super(props);
@@ -46,11 +43,14 @@ export default class Action extends React.Component<
 
   //# API Methods
   public render(): React.ReactNode {
-    console.log(ExpanderService.Expand(this.props));
+    console.log(ExpanderService.Expand(ActionProperties, this.props));
+
+    const className = `text-3xl font-bold underline ${this.props.className}`;
+
     if (!!this.actionHandler) {
-      return this.renderButton();
+      return this.renderButton(className);
     } else if (!!this.actionPath) {
-      return this.renderAnchor();
+      return this.renderAnchor(className);
     }
   }
   //#
@@ -67,18 +67,18 @@ export default class Action extends React.Component<
     }
   }
 
+  protected expandProps() {
+    return ExpanderService.Expand(ActionProperties, this.props);
+  }
+
   /**
    * Build the anchor version of the action to handle path navigation.
    *
    * @returns The anchor version of the action.
    */
-  protected renderAnchor(): React.ReactNode {
+  protected renderAnchor(className: string): React.ReactNode {
     return (
-      <a
-        href={this.actionPath}
-        className={this.props.className}
-        {...ExpanderService.Expand(this.props)}
-      >
+      <a href={this.actionPath} className={className} {...this.expandProps()}>
         {this.props.children || this.props.action.Label}
       </a>
     );
@@ -89,13 +89,13 @@ export default class Action extends React.Component<
    *
    * @returns The button version of the action.
    */
-  protected renderButton(): React.ReactNode {
+  protected renderButton(className: string): React.ReactNode {
     return (
       <button
         type="button"
         onClick={this.actionHandler}
-        className={this.props.className}
-        {...ExpanderService.Expand(this.props)}
+        className={className}
+        {...this.expandProps()}
       >
         {this.props.children || this.props.action.Label}
       </button>
@@ -103,3 +103,8 @@ export default class Action extends React.Component<
   }
   //#
 }
+
+// Remove with es7
+Action.defaultProps = new ActionProperties();
+
+export default Action;

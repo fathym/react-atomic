@@ -1,8 +1,7 @@
 import React from 'react';
 
-
 export class ActionModel {
-  public Action!: string | (() => Promise<void>);
+  public Action?: string | (() => void);
 
   public Actions?: ActionModel[];
 
