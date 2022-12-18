@@ -1,6 +1,6 @@
 {
   "name": "@fathym/react-atomic",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": ".",
   "dependencies": {
     "@semanticjs/common": "^0.56.0",
