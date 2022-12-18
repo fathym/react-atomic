@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Action from '../../../atoms/action/Action';
+import Action from './Action';
 
 export default {
   title: 'Atoms/Action',
