@@ -43,9 +43,7 @@ class Action extends React.Component<ActionProperties, ActionState> {
 
   //# API Methods
   public render(): React.ReactNode {
-    console.log(ExpanderService.Expand(ActionProperties, this.props));
-
-    const className = `text-3xl font-bold underline ${this.props.className}`;
+    const className = `text-3xl ${this.props.className}`;
 
     if (!!this.actionHandler) {
       return this.renderButton(className);
@@ -77,6 +75,7 @@ class Action extends React.Component<ActionProperties, ActionState> {
    * @returns The anchor version of the action.
    */
   protected renderAnchor(className: string): React.ReactNode {
+    className = `${className} hover:underline`;
     return (
       <a href={this.actionPath} className={className} {...this.expandProps()}>
         {this.props.children || this.props.action.Label}

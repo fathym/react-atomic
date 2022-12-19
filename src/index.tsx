@@ -4,7 +4,12 @@ import './tailwind.css';
 import Action from './atoms/action/Action';
 import { ActionModel } from './atoms/action/ActionModel';
 
-export * from '../src/atoms/action';
+export * from '../src/common';
+export * from '../src/atoms';
+export * from '../src/molecules';
+export * from '../src/organisms';
+export * from '../src/templates';
+export * from '../src/pages';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

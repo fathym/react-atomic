@@ -17,7 +17,7 @@ Simple.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  className: 'text-3xl font-bold underline',
+  className: 'text-3xl',
 };
 
 export const SimpleHref = Template.bind({});
@@ -27,5 +27,5 @@ SimpleHref.args = {
     Label: 'Hello',
   },
   target: '_blank',
-  className: 'text-3xl font-bold underline',
+  className: 'text-3xl',
 };
