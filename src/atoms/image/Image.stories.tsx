@@ -31,31 +31,31 @@ Rounded.args = {
 export const Primary = Template.bind({});
 Primary.args = {
   src: 'https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-4-470x470.png',
-  style: 'Primary',
+  color: 'Primary',
 };
 
 export const PrimaryCircle = Template.bind({});
 PrimaryCircle.args = {
   src: 'https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-4-470x470.png',
-  style: 'Primary',
+  color: 'Primary',
   variation: 'Circle',
 };
 
 export const PrimaryRounded = Template.bind({});
 PrimaryRounded.args = {
   src: 'https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-4-470x470.png',
-  style: 'Primary',
+  color: 'Primary',
   variation: 'Rounded',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   src: 'https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-4-470x470.png',
-  style: 'Secondary',
+  color: 'Secondary',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   src: 'https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/team-4-470x470.png',
-  style: 'Tertiary',
+  color: 'Tertiary',
 };

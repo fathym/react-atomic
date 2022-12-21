@@ -28,19 +28,19 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Simple Text',
   className: '',
-  style: 'Primary',
+  color: 'Primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Simple Text',
   className: '',
-  style: 'Secondary',
+  color: 'Secondary',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   children: 'Simple Text',
   className: '',
-  style: 'Tertiary',
+  color: 'Tertiary',
 };

@@ -70,7 +70,7 @@ SolidPrimary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Primary',
+  color: 'Primary',
   variation: 'Solid',
 };
 
@@ -80,7 +80,7 @@ SolidSecondary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Secondary',
+  color: 'Secondary',
   variation: 'Solid',
 };
 
@@ -90,7 +90,7 @@ SolidTertiary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Tertiary',
+  color: 'Tertiary',
   variation: 'Solid',
 };
 
@@ -109,7 +109,7 @@ OutlinePrimary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Primary',
+  color: 'Primary',
   variation: 'Outline',
 };
 
@@ -119,7 +119,7 @@ OutlineSecondary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Secondary',
+  color: 'Secondary',
   variation: 'Outline',
 };
 
@@ -129,7 +129,7 @@ OutlineTertiary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Tertiary',
+  color: 'Tertiary',
   variation: 'Outline',
 };
 
@@ -148,7 +148,7 @@ LinkPrimary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Primary',
+  color: 'Primary',
   variation: 'Link',
 };
 
@@ -158,7 +158,7 @@ LinkSecondary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Secondary',
+  color: 'Secondary',
   variation: 'Link',
 };
 
@@ -168,6 +168,6 @@ LinkTertiary.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  style: 'Tertiary',
+  color: 'Tertiary',
   variation: 'Link',
 };

@@ -19,17 +19,17 @@ Simple.args = {
 export const Primary = Template.bind({});
 Primary.args = {
   placeholder: 'Placeholder',
-  style: 'Primary',
+  color: 'Primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   placeholder: 'Placeholder',
-  style: 'Secondary',
+  color: 'Secondary',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   placeholder: 'Placeholder',
-  style: 'Tertiary',
+  color: 'Tertiary',
 };
