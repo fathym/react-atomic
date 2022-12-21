@@ -16,7 +16,6 @@
     "react:build:copyfile:package_json": "copyfiles -u 1 public/package.json build/",
     "react:build:copyfile:storybook-rename": "copyfiles -u 1 .storybook/storybook-rename.js build",
     "react:build:copyfile:tailwind:presets": "copyfiles -u 1 public/tailwind/fathym.presets.js build",
-    "fathym": "node ./fathym.js",
     "start": "concurrently \"npm:start:*\"",
     "start_:react": "react-scripts start",
     "start:storybook": "storybook dev -p 6006 -s public",
