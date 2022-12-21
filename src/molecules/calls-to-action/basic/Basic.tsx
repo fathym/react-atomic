@@ -35,7 +35,7 @@ class BasicCallToAction extends FathymComponent<BasicCallToActionProperties, Bas
     const className = this.resolveClassName();
 
     return (
-      <section className="bg-gray-100 dark:bg-gray-800 lg:py-12 lg:flex lg:justify-center">
+      <section className="lg:py-12 lg:flex lg:justify-center">
         <div className="overflow-hidden bg-white dark:bg-gray-900 lg:mx-8 lg:flex lg:max-w-6xl lg:w-full lg:shadow-md lg:rounded-xl">
           <div className="lg:w-1/2">
             <div
