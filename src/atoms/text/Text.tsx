@@ -1,5 +1,6 @@
 import React from 'react';
-import { ExpanderService } from '../../common/ExpanderService';
+import FathymComponent from '../../common/FathymComponent';
+import Styles from '../../common/Styles';
 
 export class TextProperties {
   [key: string]: any;
@@ -20,6 +21,8 @@ export class TextProperties {
 
   public children!: React.ReactNode;
 
+  public style?: 'Primary' | 'Secondary' | 'Tertiary';
+
   constructor() {
     this.element = 'span';
   }
@@ -27,21 +30,21 @@ export class TextProperties {
 
 class TextState {}
 
-class Text extends React.Component<TextProperties, TextState> {
-  //# Fields
-  //#
+class Text extends FathymComponent<TextProperties, TextState> {
+  //#region Fields
+  //#endregion
 
-  //# Properties
-  //#
+  //#region Properties
+  //#endregion
 
-  //# Constructors
+  //#region Constructors
   /** Initialize the default property values based on constructor. */
   public static defaultProps = new TextProperties();
-  //#
+  //#endregion
 
-  //# API Methods
+  //#region API Methods
   public render(): React.ReactNode {
-    const className = `${this.props.className}`;
+    const className = this.resolveClassName();
 
     const CustomTag: any = this.props.element || 'span';
 
@@ -51,13 +54,33 @@ class Text extends React.Component<TextProperties, TextState> {
       </CustomTag>
     );
   }
-  //#
+  //#endregion
 
-  //# Helper
-  protected expandProps() {
-    return ExpanderService.Expand(TextProperties, this.props);
+  //#region Helper
+  protected loadClassNameInstructions(): string[][] {
+    const style = this.props.style || '';
+
+    console.log(style);
+
+    return [['Default'], ['Styles', style]];
   }
-  //#
+
+  protected loadDefaultStyles(): Styles {
+    return {
+      Default: '',
+      Styles: {
+        '': '',
+        Primary: 'text-primary-500',
+        Secondary: 'text-secondary-500',
+        Tertiary: 'text-tertiary-500',
+      },
+    };
+  }
+
+  protected loadPropsType(): new () => TextProperties {
+    return TextProperties;
+  }
+  //#endregion
 }
 
 // Remove with es7

@@ -1,36 +1,43 @@
 import React from 'react';
-import { ActionModel } from './ActionModel';
-import { ExpanderService } from '../../common/ExpanderService';
+import ActionModel from './ActionModel';
+import Styles from '../../common/Styles';
+import FathymComponent from '../../common/FathymComponent';
+import FathymProperties from '../../common/FathymProperties';
 
-export class ActionProperties {
-  [key: string]: any;
-
+export class ActionProperties extends FathymProperties {
   public action!: ActionModel;
-
-  public className?: string;
 
   public children?: React.ReactNode;
 
-  public size?: 'small' | 'medium' | 'large';
+  public size?: 'Small' | 'Base' | 'Large' | 'BLAM';
+
+  public style?: 'Primary' | 'Secondary' | 'Tertiary';
+
+  public variation?: 'Text' | 'Solid' | 'Outline' | 'Link';
 
   constructor() {
-    this.size = 'medium';
+    super();
+
+    this.size = 'Base';
+
+    this.variation = 'Text';
   }
 }
 
 class ActionState {}
 
-class Action extends React.Component<ActionProperties, ActionState> {
-  //# Fields
+class Action extends FathymComponent<ActionProperties, ActionState> {
+  //#region Fields
   protected actionHandler?: () => void;
 
   protected actionPath?: string;
-  //#
+  //#endregion
 
-  //# Properties
-  //#
+  //#region Properties
+  public Styles!: Styles;
+  //#endregion
 
-  //# Constructors
+  //#region Constructors
   /** Initialize the default property values based on constructor. */
   public static defaultProps = new ActionProperties();
 
@@ -38,12 +45,14 @@ class Action extends React.Component<ActionProperties, ActionState> {
     super(props);
 
     this.configureActionHandling();
-  }
-  //#
 
-  //# API Methods
+    this.Styles = this.loadDefaultStyles();
+  }
+  //#endregion
+
+  //#region API Methods
   public render(): React.ReactNode {
-    const className = `text-3xl ${this.props.className}`;
+    const className = this.resolveClassName();
 
     if (!!this.actionHandler) {
       return this.renderButton(className);
@@ -51,9 +60,9 @@ class Action extends React.Component<ActionProperties, ActionState> {
       return this.renderAnchor(className);
     }
   }
-  //#
+  //#endregion
 
-  //# Helper
+  //#region Helper
   /**
    * Setup the action handler based on passed in configuration.
    */
@@ -65,8 +74,65 @@ class Action extends React.Component<ActionProperties, ActionState> {
     }
   }
 
-  protected expandProps() {
-    return ExpanderService.Expand(ActionProperties, this.props);
+  protected loadClassNameInstructions(): string[][] {
+    const size = this.props.size || 'Base';
+    
+    const style = this.props.style || ('');
+
+    const variation = this.props.variation || 'Text';
+
+    return [
+      ['Default'],
+      ['Sizes', size],
+      ['Variations', variation],
+      ['Variations', style, variation],
+    ];
+  }
+
+  protected loadDefaultStyles(): Styles {
+    return {
+      Default: 'px-4 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150',
+      Sizes: {
+        Small: 'text-xs',
+        Base: 'text-lg',
+        Large: 'text-3xl',
+        BLAM: 'text-6xl',
+      },
+      Variations: {
+        Text: '',
+        Solid: '',
+        Outline: 'border',
+        Link: 'underline',
+        '': {
+          Text: '',
+          Solid: 'bg-slate-500 active:bg-slate-600',
+          Outline: 'border-slate-500 text-slate-500',
+          Link: '',
+        },
+        Primary: {
+          Text: '',
+          Solid: 'bg-primary-500 active:bg-primary-600',
+          Outline: 'border-primary-500 text-primary-500',
+          Link: 'text-primary-500',
+        },
+        Secondary: {
+          Text: '',
+          Solid: 'bg-secondary-500 active:bg-secondary-600',
+          Outline: 'border-secondary-500 text-secondary-500',
+          Link: 'text-secondary-500',
+        },
+        Tertiary: {
+          Text: '',
+          Solid: 'bg-tertiary-500 active:bg-tertiary-600',
+          Outline: 'border-tertiary-500 text-tertiary-500',
+          Link: 'text-tertiary-500',
+        },
+      },
+    };
+  }
+
+  protected loadPropsType(): new () => ActionProperties {
+    return ActionProperties;
   }
 
   /**
@@ -75,7 +141,6 @@ class Action extends React.Component<ActionProperties, ActionState> {
    * @returns The anchor version of the action.
    */
   protected renderAnchor(className: string): React.ReactNode {
-    className = `${className} hover:underline`;
     return (
       <a href={this.actionPath} className={className} {...this.expandProps()}>
         {this.props.children || this.props.action.Label}
@@ -100,10 +165,10 @@ class Action extends React.Component<ActionProperties, ActionState> {
       </button>
     );
   }
-  //#
+  //#endregion
 }
 
-// Remove with es7
+// Remove with es7?
 Action.defaultProps = new ActionProperties();
 
 export default Action;

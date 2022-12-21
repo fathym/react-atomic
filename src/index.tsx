@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './tailwind.css';
 import Action from './atoms/action/Action';
-import { ActionModel } from './atoms/action/ActionModel';
+import ActionModel from './atoms/action/ActionModel';
 
 export * from '../src/common';
 export * from '../src/atoms';

@@ -1,8 +1,6 @@
-// import BasicObject from '@semanticjs/common';
-export class BasicHash {
-  [key: string]: any;
-}
-export class ExpanderService {
+import { BasicHash } from "./BasicHash";
+
+export default class ExpanderService {
   /**
    * Used to get an expanded object of the properties that excludes the actual properties of the prototype.
    */

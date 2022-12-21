@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class ActionModel {
+export default class ActionModel {
   public Action?: string | (() => void);
 
   public Actions?: ActionModel[];

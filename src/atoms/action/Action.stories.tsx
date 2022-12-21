@@ -11,21 +11,163 @@ export default {
 
 const Template: ComponentStory<typeof Action> = (args) => <Action {...args} />;
 
-export const Simple = Template.bind({});
-Simple.args = {
+export const Text = Template.bind({});
+Text.args = {
   action: {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  className: 'text-3xl',
 };
 
-export const SimpleHref = Template.bind({});
-SimpleHref.args = {
+export const TextHref = Template.bind({});
+TextHref.args = {
   action: {
     Action: '/',
     Label: 'Hello',
   },
   target: '_blank',
-  className: 'text-3xl',
+};
+
+export const SmallText = Template.bind({});
+SmallText.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  size:'Small',
+};
+
+export const LargeText = Template.bind({});
+LargeText.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  size:'Large',
+};
+
+export const BLAMText = Template.bind({});
+BLAMText.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  size: 'BLAM',
+};
+
+export const Solid = Template.bind({});
+Solid.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  variation: 'Solid',
+};
+
+export const SolidPrimary = Template.bind({});
+SolidPrimary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Primary',
+  variation: 'Solid',
+};
+
+export const SolidSecondary = Template.bind({});
+SolidSecondary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Secondary',
+  variation: 'Solid',
+};
+
+export const SolidTertiary = Template.bind({});
+SolidTertiary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Tertiary',
+  variation: 'Solid',
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  variation: 'Outline',
+};
+
+export const OutlinePrimary = Template.bind({});
+OutlinePrimary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Primary',
+  variation: 'Outline',
+};
+
+export const OutlineSecondary = Template.bind({});
+OutlineSecondary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Secondary',
+  variation: 'Outline',
+};
+
+export const OutlineTertiary = Template.bind({});
+OutlineTertiary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Tertiary',
+  variation: 'Outline',
+};
+
+export const Link = Template.bind({});
+Link.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  variation: 'Link',
+};
+
+export const LinkPrimary = Template.bind({});
+LinkPrimary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Primary',
+  variation: 'Link',
+};
+
+export const LinkSecondary = Template.bind({});
+LinkSecondary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Secondary',
+  variation: 'Link',
+};
+
+export const LinkTertiary = Template.bind({});
+LinkTertiary.args = {
+  action: {
+    Action: action('Hello Clicked'),
+    Label: 'Hello',
+  },
+  style: 'Tertiary',
+  variation: 'Link',
 };

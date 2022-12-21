@@ -23,3 +23,24 @@ SimpleH1.args = {
   className: 'text-3xl font-bold underline',
   element: 'h1',
 };
+
+export const Primary = Template.bind({});
+Primary.args = {
+  children: 'Simple Text',
+  className: '',
+  style: 'Primary',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  children: 'Simple Text',
+  className: '',
+  style: 'Secondary',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  children: 'Simple Text',
+  className: '',
+  style: 'Tertiary',
+};
