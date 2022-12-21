@@ -28,7 +28,7 @@ Simple.args = {
   children: (
     <Action
       action={cta}
-      style="Primary"
+      color="Primary"
       variation="Solid"
       className=" w-full"
     />
