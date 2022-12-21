@@ -76,8 +76,8 @@ class Action extends FathymComponent<ActionProperties, ActionState> {
 
   protected loadClassNameInstructions(): string[][] {
     const size = this.props.size || 'Base';
-    
-    const style = this.props.style || ('');
+
+    const style = this.props.style || '';
 
     const variation = this.props.variation || 'Text';
 
@@ -91,7 +91,8 @@ class Action extends FathymComponent<ActionProperties, ActionState> {
 
   protected loadDefaultStyles(): Styles {
     return {
-      Default: 'px-4 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150',
+      Default:
+        'px-4 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150',
       Sizes: {
         Small: 'text-xs',
         Base: 'text-lg',
@@ -104,28 +105,28 @@ class Action extends FathymComponent<ActionProperties, ActionState> {
         Outline: 'border',
         Link: 'underline',
         '': {
-          Text: '',
+          Text: 'active:text-white-600',
           Solid: 'bg-slate-500 active:bg-slate-600',
-          Outline: 'border-slate-500 text-slate-500',
-          Link: '',
+          Outline: 'border-slate-500 text-slate-500 active:border-slate-600 active:text-slate-600',
+          Link: 'active:text-white-600',
         },
         Primary: {
-          Text: '',
+          Text: 'text-primary-500 active:text-primary-600',
           Solid: 'bg-primary-500 active:bg-primary-600',
-          Outline: 'border-primary-500 text-primary-500',
-          Link: 'text-primary-500',
+          Outline: 'border-primary-500 text-primary-500 active:border-primary-600 active:text-primary-600',
+          Link: 'text-primary-500 active:text-primary-600',
         },
         Secondary: {
-          Text: '',
+          Text: 'text-secondary-500 active:text-secondary-600',
           Solid: 'bg-secondary-500 active:bg-secondary-600',
-          Outline: 'border-secondary-500 text-secondary-500',
-          Link: 'text-secondary-500',
+          Outline: 'border-secondary-500 text-secondary-500 active:border-secondary-600 active:text-secondary-600',
+          Link: 'text-secondary-500 active:text-secondary-600',
         },
         Tertiary: {
-          Text: '',
+          Text: 'text-tertiary-500 active:text-tertiary-600',
           Solid: 'bg-tertiary-500 active:bg-tertiary-600',
-          Outline: 'border-tertiary-500 text-tertiary-500',
-          Link: 'text-tertiary-500',
+          Outline: 'border-tertiary-500 text-tertiary-500 active:border-tertiary-600 active:text-tertiary-600',
+          Link: 'text-tertiary-500 active:text-tertiary-600',
         },
       },
     };
