@@ -16,9 +16,8 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
-    "emitDeclarationOnly": true
+    "declarationDir": "build/types",
+    "sourceMap": true
   },
   "include": ["src"],
   "exclude": [
