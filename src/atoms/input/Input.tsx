@@ -7,7 +7,7 @@ export class InputProperties {
 
   public className?: string;
 
-  public style?: 'Primary' | 'Secondary' | 'Tertiary';
+  public color?: 'Primary' | 'Secondary' | 'Tertiary';
 }
 
 class InputState {}
@@ -42,22 +42,23 @@ class Input extends FathymComponent<InputProperties, InputState> {
 
   //#region Helper
   protected loadClassNameInstructions(): string[][] {
-    const style = this.props.style || '';
+    const color = this.props.color || '';
 
-    console.log(style);
-
-    return [['Default'], ['Styles', style]];
+    return [['Default'], ['Colors', color]];
   }
 
   protected loadDefaultStyles(): Styles {
     return {
       Default:
         'px-2 py-1 relative rounded border-0 shadow outline-none focus:outline-none',
-      Styles: {
+      Colors: {
         '': 'text-slate-500 placeholder-slate-300 shadow-slate-300 active:shadow-slate-800 focus:shadow-slate-800',
-        Primary: 'text-primary-500 placeholder-primary-200 shadow-primary-300 active:shadow-primary-800 focus:shadow-primary-800',
-        Secondary: 'text-secondary-500 placeholder-secondary-200 shadow-secondary-300 active:shadow-secondary-800 focus:shadow-secondary-800',
-        Tertiary: 'text-tertiary-500 placeholder-tertiary-200 shadow-tertiary-300 active:shadow-tertiary-800 focus:shadow-tertiary-800',
+        Primary:
+          'text-primary-500 placeholder-primary-200 shadow-primary-300 active:shadow-primary-800 focus:shadow-primary-800',
+        Secondary:
+          'text-secondary-500 placeholder-secondary-200 shadow-secondary-300 active:shadow-secondary-800 focus:shadow-secondary-800',
+        Tertiary:
+          'text-tertiary-500 placeholder-tertiary-200 shadow-tertiary-300 active:shadow-tertiary-800 focus:shadow-tertiary-800',
       },
     };
   }

@@ -11,7 +11,7 @@ export class ActionProperties extends FathymProperties {
 
   public size?: 'Small' | 'Base' | 'Large' | 'BLAM';
 
-  public style?: 'Primary' | 'Secondary' | 'Tertiary';
+  public color?: 'Primary' | 'Secondary' | 'Tertiary';
 
   public variation?: 'Text' | 'Solid' | 'Outline' | 'Link';
 
@@ -77,7 +77,7 @@ class Action extends FathymComponent<ActionProperties, ActionState> {
   protected loadClassNameInstructions(): string[][] {
     const size = this.props.size || 'Base';
 
-    const style = this.props.style || '';
+    const color = this.props.color || '';
 
     const variation = this.props.variation || 'Text';
 
@@ -85,7 +85,7 @@ class Action extends FathymComponent<ActionProperties, ActionState> {
       ['Default'],
       ['Sizes', size],
       ['Variations', variation],
-      ['Variations', style, variation],
+      ['Variations', color, variation],
     ];
   }
 

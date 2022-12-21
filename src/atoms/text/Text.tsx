@@ -21,7 +21,7 @@ export class TextProperties {
 
   public children!: React.ReactNode;
 
-  public style?: 'Primary' | 'Secondary' | 'Tertiary';
+  public color?: 'Primary' | 'Secondary' | 'Tertiary';
 
   constructor() {
     this.element = 'span';
@@ -58,17 +58,15 @@ class Text extends FathymComponent<TextProperties, TextState> {
 
   //#region Helper
   protected loadClassNameInstructions(): string[][] {
-    const style = this.props.style || '';
+    const color = this.props.color || '';
 
-    console.log(style);
-
-    return [['Default'], ['Styles', style]];
+    return [['Default'], ['Colors', color]];
   }
 
   protected loadDefaultStyles(): Styles {
     return {
       Default: '',
-      Styles: {
+      Colors: {
         '': '',
         Primary: 'text-primary-500',
         Secondary: 'text-secondary-500',

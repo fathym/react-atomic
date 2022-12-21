@@ -9,9 +9,9 @@ export class ImageProperties {
 
   public className?: string;
 
-  public src!: string;
+  public color?: 'Primary' | 'Secondary' | 'Tertiary';
 
-  public style?: 'Primary' | 'Secondary' | 'Tertiary';
+  public src!: string;
 
   public variation?: 'Rounded' | 'Circle';
 }
@@ -51,18 +51,17 @@ class Image extends FathymComponent<ImageProperties, ImageState> {
 
   //#region Helper
   protected loadClassNameInstructions(): string[][] {
-    const style = this.props.style || '';
+    const color = this.props.color || '';
 
     const variation = this.props.variation || '';
-    console.log(variation);
 
-    return [['Default'], ['Styles', style], ['Variations', variation]];
+    return [['Default'], ['Colors', color], ['Variations', variation]];
   }
 
   protected loadDefaultStyles(): Styles {
     return {
       Default: 'shadow-lg max-w-full h-auto align-middle border-none',
-      Styles: {
+      Colors: {
         '': '',
         Primary: 'shadow-primary-300',
         Secondary: 'shadow-secondary-300',
