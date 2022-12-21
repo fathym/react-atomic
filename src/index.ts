@@ -1,6 +1,4 @@
-import ActionModel from './atoms/action/ActionModel';
-
-export { ActionModel };
+export * from './atoms/action';
 
 // export * from './common';
 // export * from './atoms';

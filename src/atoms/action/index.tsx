@@ -1,3 +1,4 @@
-export * from './Action';
-export * from './ActionModel';
-export * from '../../common/Styles';
+import Action, {ActionProperties} from './Action';
+import ActionModel from './ActionModel';
+
+export { Action, ActionProperties, ActionModel}
