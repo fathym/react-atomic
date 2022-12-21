@@ -7,7 +7,7 @@
   "scripts": {
     "build": "concurrently \"npm:build:*\"",
     "build_:react": "react-scripts build",
-    "build:react": "tsc --build \"./tsconfig.json\"",
+    "build:react": "rimraf ./build && tsc --build \"./tsconfig.json\"",
     "build:storybook": "storybook build -s public",
     "deploy": "npm version patch && npm run deploy:app",
     "deploy:app": "npm version patch --prefix public && npm run build && concurrently \"npm:publish:*\"",
