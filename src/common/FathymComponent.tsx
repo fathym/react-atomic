@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpanderService from './ExpanderService';
+import ExpanderService from "./tailwind/TailwindBase";
 import FathymProperties from './FathymProperties';
 import Styles from './Styles';
 

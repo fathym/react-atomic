@@ -27,5 +27,5 @@
     "**/*.stories.tsx",
     "./src/setupTests.ts"
   ],
-  "files": ["./src/index.ts"]
+  "files": ["./src/index.ts", "./src/common/TailwindContext.tsx", "src/common/tailwind/TailwindContextConfiguration.tsx", "./src/common/tailwind/TailwindBase.tsx"]
 }

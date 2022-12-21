@@ -1,3 +1,5 @@
+import React from 'react';
+import TailwindContext from '../src/common/TailwindContext';
 import '../src/tailwind.css';
 import './storybook.css';
 // import { themes } from '@storybook/theming';
@@ -24,3 +26,11 @@ export const parameters = {
   //   theme: themes.light,
   // },
 };
+
+export const decorators = [
+  (Story) => (
+    <TailwindContext >
+      <Story />
+    </TailwindContext>
+  ),
+];
