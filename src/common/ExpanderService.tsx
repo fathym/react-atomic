@@ -1,4 +1,4 @@
-import { BasicHash } from "./BasicHash";
+import BasicHash from "./BasicHash";
 
 export default class ExpanderService {
   /**

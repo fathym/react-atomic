@@ -1,1 +1,3 @@
-export * from './Image';
+import Image, { ImageProperties } from './Image';
+
+export { Image, ImageProperties };

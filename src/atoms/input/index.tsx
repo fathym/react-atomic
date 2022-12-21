@@ -1,1 +1,3 @@
-export * from './Input';
+import Input, { InputProperties } from './Input';
+
+export { Input, InputProperties };
