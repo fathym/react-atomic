@@ -1,4 +1,7 @@
 {
   "name": "@fathym/react-atomic",
-  "version": "0.0.10"
+  "version": "0.0.10",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "types/index.d.ts"
 }
