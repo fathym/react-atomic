@@ -1,8 +1,9 @@
 import React from 'react';
 import FathymComponent from '../../common/FathymComponent';
+import FathymProperties from '../../common/FathymProperties';
 import Styles from '../../common/Styles';
 
-export class InputProperties {
+export class InputProperties extends FathymProperties {
   [key: string]: any;
 
   public className?: string;

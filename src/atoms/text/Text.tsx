@@ -1,10 +1,9 @@
 import React from 'react';
 import FathymComponent from '../../common/FathymComponent';
+import FathymProperties from '../../common/FathymProperties';
 import Styles from '../../common/Styles';
 
-export class TextProperties {
-  [key: string]: any;
-
+export class TextProperties extends FathymProperties {
   public element!:
     | 'h1'
     | 'h2'
@@ -24,6 +23,8 @@ export class TextProperties {
   public color?: 'Primary' | 'Secondary' | 'Tertiary';
 
   constructor() {
+    super();
+    
     this.element = 'span';
   }
 }

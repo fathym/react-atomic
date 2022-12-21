@@ -1,10 +1,9 @@
 import React from 'react';
 import FathymComponent from '../../common/FathymComponent';
+import FathymProperties from '../../common/FathymProperties';
 import Styles from '../../common/Styles';
 
-export class ImageProperties {
-  [key: string]: any;
-
+export class ImageProperties extends FathymProperties {
   public alt!: string;
 
   public className?: string;
