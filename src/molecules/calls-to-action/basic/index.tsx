@@ -1,6 +1,3 @@
-import Basic, { BasicProperties } from './Basic';
+import BasicCallToAction, { BasicCallToActionProperties } from './Basic';
 
-export {
-  Basic as BasicCallToAction,
-  BasicProperties as BasicCallToActionProperties,
-};
+export { BasicCallToAction, BasicCallToActionProperties };

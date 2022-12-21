@@ -2,7 +2,7 @@ import React from 'react';
 import FathymComponent from '../../../common/FathymComponent';
 import Styles from '../../../common/Styles';
 
-export class BasicProperties {
+export class BasicCallToActionProperties {
   [key: string]: any;
 
   public callToAction!: React.ReactNode;
@@ -16,9 +16,9 @@ export class BasicProperties {
   public title!: React.ReactNode;
 }
 
-class BasicState {}
+class BasicCallToActionState {}
 
-class Basic extends FathymComponent<BasicProperties, BasicState> {
+class BasicCallToAction extends FathymComponent<BasicCallToActionProperties, BasicCallToActionState> {
   //#region Fields
   //#endregion
 
@@ -27,7 +27,7 @@ class Basic extends FathymComponent<BasicProperties, BasicState> {
 
   //#region Constructors
   /** Initialize the default property values based on constructor. */
-  public static defaultProps = new BasicProperties();
+  public static defaultProps = new BasicCallToActionProperties();
   //#endregion
 
   //#region API Methods
@@ -78,13 +78,13 @@ class Basic extends FathymComponent<BasicProperties, BasicState> {
     };
   }
 
-  protected loadPropsType(): new () => BasicProperties {
-    return BasicProperties;
+  protected loadPropsType(): new () => BasicCallToActionProperties {
+    return BasicCallToActionProperties;
   }
   //#endregion
 }
 
 // Remove with es7
-Basic.defaultProps = new BasicProperties();
+BasicCallToAction.defaultProps = new BasicCallToActionProperties();
 
-export default Basic;
+export default BasicCallToAction;
