@@ -1,5 +1,5 @@
 import BasicHash from './BasicHash';
-import ExpanderService from "./tailwind/TailwindBase";
+import ExpanderService from "./ExpanderService";
 import FathymComponent from './FathymComponent';
 import FathymProperties from './FathymProperties';
 import Styles from './Styles';
