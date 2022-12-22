@@ -15,33 +15,33 @@ export const Simple = Template.bind({});
 Simple.args = {
   children: 'Simple Text',
   color: 'Primary',
-  classes: 'text-2xl line-through',
+  tails: 'text-2xl line-through',
 };
 
 export const SimpleH1 = Template.bind({});
 SimpleH1.args = {
   children: 'Simple h1',
-  classes: 'text-3xl font-bold underline',
+  tails: 'text-3xl font-bold underline',
   element: 'h1',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
   children: 'Simple Text',
-  classes: '',
+  tails: '',
   color: 'Primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Simple Text',
-  classes: '',
+  tails: '',
   color: 'Secondary',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   children: 'Simple Text',
-  classes: '',
+  className: '',
   color: 'Tertiary',
 };

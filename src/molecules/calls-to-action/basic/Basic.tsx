@@ -64,8 +64,6 @@ class BasicCallToAction extends FathymComponent<BasicCallToActionProperties, Bas
   protected loadClassNameInstructions(): string[][] {
     const style = this.props.style || '';
 
-    console.log(style);
-
     return [['Default']];
   }
 

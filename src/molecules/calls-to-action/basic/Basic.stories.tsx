@@ -32,7 +32,7 @@ Simple.args = {
       action={cta}
       color="Primary"
       variation="Solid"
-      classes="text-gray-100 w-full"
+      tails="text-gray-100 w-full"
     />
   ),
 };
@@ -44,6 +44,6 @@ Hyland.args = {
   callToAction:
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem modi reprehenderit vitae exercitationem aliquid dolores ullam temporibus enim expedita aperiam mollitia iure consectetur dicta tenetur, porro consequuntur saepe accusantium consequatur.',
   children: (
-    <Action action={cta} color="Primary" variation="Solid" classes=" w-full" />
+    <Action action={cta} color="Primary" variation="Solid" tails=" w-full" />
   ),
 };

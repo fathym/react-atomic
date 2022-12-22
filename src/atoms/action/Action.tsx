@@ -54,8 +54,6 @@ class Action extends FathymComponent<ActionProperties, ActionState> {
   public render(): React.ReactNode {
     const className = this.resolveClassName();
 
-    console.log(`Action - ${className}`);
-
     if (!!this.actionHandler) {
       return this.renderButton(className);
     } else if (!!this.actionPath) {

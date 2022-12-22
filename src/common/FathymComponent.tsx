@@ -37,7 +37,7 @@ export default abstract class FathymComponent<
    */
   protected abstract loadPropsType(): new () => TProps;
 
-  protected mergeClasses(className: string): string {
+  protected mergeTails(className: string): string {
     return twMerge(className);
   }
 
@@ -47,31 +47,27 @@ export default abstract class FathymComponent<
     const instructionSets: string[][] = this.loadClassNameInstructions();
 
     const classNameSegments = instructionSets.reduce(
-      (classes, instructions) => {
+      (tails, instructions) => {
         let worked: string | Styles = { ...defaultStyles };
 
         if (!!worked) {
           worked = instructions.reduce((wrk, instruction) => {
-            console.log(wrk);
             return (wrk as Styles)[instruction];
           }, worked as string | Styles);
-          console.log(worked);
         }
 
         if (!!worked) {
-          classes.push((worked as string) || '');
+          tails.push((worked as string) || '');
         }
 
-        return classes;
+        return tails;
       },
       []
     );
 
-    classNameSegments.push(this.props.classes || '');
+    classNameSegments.push(this.props.tails || '');
 
-    const className = this.mergeClasses(classNameSegments.join(' '));
-
-    console.log(className);
+    const className = this.mergeTails(classNameSegments.join(' '));
 
     return className;
   }

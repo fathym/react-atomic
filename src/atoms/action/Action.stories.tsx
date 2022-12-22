@@ -9,7 +9,7 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Action>;
 
-const Template: ComponentStory<typeof Action> = (args) => <Action classes="bg-black" {...args} />;
+const Template: ComponentStory<typeof Action> = (args) => <Action {...args} />;
 
 export const Text = Template.bind({});
 Text.args = {
@@ -102,7 +102,7 @@ SolidPrimaryCustomClasses.args = {
   },
   color: 'Primary',
   variation: 'Solid',
-  classes: 'text-gray-100',
+  tails: 'text-gray-100',
 };
 
 export const Outline = Template.bind({});
