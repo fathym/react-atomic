@@ -1,7 +1,9 @@
 import React from 'react';
-import TailwindContextConfiguration from './TailwindBase';
+import TailwindContextConfiguration from './TailwindContextConfiguration';
 
 export class TailwindContextProperties {
+  public children!: React.ReactNode;
+
   public config!: TailwindContextConfiguration;
 }
 
@@ -24,7 +26,9 @@ class TailwindContext extends React.Component<
 
   //#region API Methods
   public render(): React.ReactNode {
-    return <div className={this.props.config.toString()}></div>;
+    return (
+      <div className={this.props.config?.toString()}>{this.props.children}</div>
+    );
   }
   //#endregion
 

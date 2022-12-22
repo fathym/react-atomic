@@ -1,7 +1,6 @@
 import TailwindContext from './TailwindContext';
-import TailwindContextConfiguration from "./TailwindBase";
+import TailwindContextConfiguration from './TailwindBase';
 
-export {
-  TailwindContext,
-  TailwindContextConfiguration,
-};
+const FathymDefaultTailwind = new TailwindContextConfiguration();
+
+export { FathymDefaultTailwind, TailwindContext, TailwindContextConfiguration };

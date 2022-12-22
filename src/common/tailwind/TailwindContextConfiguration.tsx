@@ -13,14 +13,10 @@ export default class TailwindContextConfiguration {
 
   //#region API Methods
   public toString(): string {
-    return `${this.Base.toString()}sdrgad4`;
+    return `${this.Base.toString()}`;
   }
   //#endregion
 
   //#region Helpers
   //#endregion
 }
-
-const FathymDefaultTailwind = new TailwindContextConfiguration();
-
-export { FathymDefaultTailwind };
