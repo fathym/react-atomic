@@ -16,8 +16,6 @@ export class TextProperties extends FathymProperties {
     | 'span'
     | '';
 
-  public className?: string;
-
   public children!: React.ReactNode;
 
   public color?: 'Primary' | 'Secondary' | 'Tertiary';

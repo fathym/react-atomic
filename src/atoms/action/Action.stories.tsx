@@ -34,7 +34,7 @@ SmallText.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  size:'Small',
+  size: 'Small',
 };
 
 export const LargeText = Template.bind({});
@@ -43,7 +43,7 @@ LargeText.args = {
     Action: action('Hello Clicked'),
     Label: 'Hello',
   },
-  size:'Large',
+  size: 'Large',
 };
 
 export const BLAMText = Template.bind({});
@@ -92,6 +92,17 @@ SolidTertiary.args = {
   },
   color: 'Tertiary',
   variation: 'Solid',
+};
+
+export const SolidPrimaryCustomClasses = Template.bind({});
+SolidPrimaryCustomClasses.args = {
+  action: {
+    Action: action('Hello Clicked', { depth: 1 }),
+    Label: 'Hello',
+  },
+  color: 'Primary',
+  variation: 'Solid',
+  className: 'text-gray-100',
 };
 
 export const Outline = Template.bind({});

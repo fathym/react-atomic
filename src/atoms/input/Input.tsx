@@ -4,10 +4,6 @@ import FathymProperties from '../../common/FathymProperties';
 import Styles from '../../common/Styles';
 
 export class InputProperties extends FathymProperties {
-  [key: string]: any;
-
-  public className?: string;
-
   public color?: 'Primary' | 'Secondary' | 'Tertiary';
 }
 

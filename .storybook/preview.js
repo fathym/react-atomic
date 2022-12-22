@@ -1,6 +1,6 @@
 import React from 'react';
 import TailwindContext from '../src/common/tailwind/TailwindContext';
-import FathymDefaultTailwind from '../src/common/tailwind';
+import TailwindContextConfiguration from '../src/common/tailwind/TailwindContextConfiguration';
 import '../src/tailwind.css';
 import './storybook.css';
 // import { themes } from '@storybook/theming';
@@ -27,10 +27,10 @@ export const parameters = {
   //   theme: themes.light,
   // },
 };
-debugger;
+
 export const decorators = [
   (Story) => (
-    <TailwindContext config={FathymDefaultTailwind}>
+    <TailwindContext config={new TailwindContextConfiguration()}>
       <Story />
     </TailwindContext>
   ),

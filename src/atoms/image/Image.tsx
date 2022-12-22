@@ -6,8 +6,6 @@ import Styles from '../../common/Styles';
 export class ImageProperties extends FathymProperties {
   public alt!: string;
 
-  public className?: string;
-
   public color?: 'Primary' | 'Secondary' | 'Tertiary';
 
   public src!: string;

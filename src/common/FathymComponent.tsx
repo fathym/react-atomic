@@ -54,7 +54,7 @@ export default abstract class FathymComponent<
         }
 
         if (!!worked) {
-          classes.push(worked as string || '');
+          classes.push((worked as string) || '');
         }
 
         return classes;
@@ -64,7 +64,11 @@ export default abstract class FathymComponent<
 
     classNameSegments.push(this.props.className || '');
 
-    return classNameSegments.join(' ');
+    const className = classNameSegments.join(' ');
+
+    console.log(className);
+
+    return className;
   }
   //#endregion
 }

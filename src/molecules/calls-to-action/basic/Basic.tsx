@@ -1,15 +1,12 @@
 import React from 'react';
 import FathymComponent from '../../../common/FathymComponent';
+import FathymProperties from '../../../common/FathymProperties';
 import Styles from '../../../common/Styles';
 
-export class BasicCallToActionProperties {
-  [key: string]: any;
-
+export class BasicCallToActionProperties extends FathymProperties {
   public callToAction!: React.ReactNode;
 
   public children?: React.ReactNode;
-
-  public className?: string;
 
   public image!: string;
 
