@@ -1,4 +1,5 @@
 import TailwindContext from './TailwindContext';
-import TailwindContextConfiguration from './TailwindBase';
+import TailwindBase from './TailwindBase';
+import TailwindContextConfiguration from './TailwindContextConfiguration';
 
-export { TailwindContext, TailwindContextConfiguration };
+export { TailwindContext, TailwindContextConfiguration, TailwindBase };
