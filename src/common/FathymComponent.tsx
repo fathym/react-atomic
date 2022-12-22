@@ -67,7 +67,7 @@ export default abstract class FathymComponent<
       []
     );
 
-    classNameSegments.push(this.props.className || '');
+    classNameSegments.push(this.props.classes || '');
 
     const className = this.mergeClasses(classNameSegments.join(' '));
 

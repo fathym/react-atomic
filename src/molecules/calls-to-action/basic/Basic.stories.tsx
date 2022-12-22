@@ -32,10 +32,9 @@ Simple.args = {
       action={cta}
       color="Primary"
       variation="Solid"
-      className=" w-full"
+      classes="text-gray-100 w-full"
     />
   ),
-  className: '',
 };
 
 export const Hyland = Template.bind({});
@@ -45,12 +44,6 @@ Hyland.args = {
   callToAction:
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem modi reprehenderit vitae exercitationem aliquid dolores ullam temporibus enim expedita aperiam mollitia iure consectetur dicta tenetur, porro consequuntur saepe accusantium consequatur.',
   children: (
-    <Action
-      action={cta}
-      color="Primary"
-      variation="Solid"
-      className=" w-full"
-    />
+    <Action action={cta} color="Primary" variation="Solid" classes=" w-full" />
   ),
-  className: '',
 };
