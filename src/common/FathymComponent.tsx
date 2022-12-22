@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from "tailwind-merge";
 import ExpanderService from './ExpanderService';
 import FathymProperties from './FathymProperties';
 import Styles from './Styles';
@@ -36,6 +37,10 @@ export default abstract class FathymComponent<
    */
   protected abstract loadPropsType(): new () => TProps;
 
+  protected mergeClasses(className: string): string {
+    return twMerge(className);
+  }
+
   protected resolveClassName(): string {
     const defaultStyles = this.loadDefaultStyles();
 
@@ -64,7 +69,7 @@ export default abstract class FathymComponent<
 
     classNameSegments.push(this.props.className || '');
 
-    const className = classNameSegments.join(' ');
+    const className = this.mergeClasses(classNameSegments.join(' '));
 
     console.log(className);
 
