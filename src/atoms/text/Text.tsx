@@ -4,7 +4,7 @@ import FathymProperties from '../../common/FathymProperties';
 import Styles from '../../common/Styles';
 
 export class TextProperties extends FathymProperties {
-  public element!:
+  public element?:
     | 'h1'
     | 'h2'
     | 'h3'
