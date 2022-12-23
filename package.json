@@ -1,6 +1,6 @@
 {
   "name": "@fathym/react-atomic",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "homepage": ".",
   "scripts": {
     "build": "concurrently \"npm:build:*\"",
