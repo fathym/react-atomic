@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Action from './Action';
+import { Navigate } from 'react-router-dom';
 
 export default {
   title: 'Atoms/Action',
@@ -156,7 +157,7 @@ Link.args = {
 export const LinkPrimary = Template.bind({});
 LinkPrimary.args = {
   action: {
-    Action: action('Hello Clicked'),
+    Action: <Navigate to="/" replace={true} />,
     Label: 'Hello',
   },
   color: 'Primary',
