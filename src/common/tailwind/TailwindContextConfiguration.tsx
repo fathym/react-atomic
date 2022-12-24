@@ -1,20 +1,25 @@
-import TailwindBase from './TailwindBase';
+import { ActionSymbol } from '../../atoms/action/ActionSymbol';
+import Tails from './Tails';
 
 export default class TailwindContextConfiguration {
   //#region Properties
-  public Base!: TailwindBase;
+  public Base!: string;
+
+  public Custom!: { [comp: symbol]: Tails };
   //#endregion
 
   //#region Constructors
   constructor() {
-    this.Base = new TailwindBase();
+    this.Base =
+      'font-sans font-normal leading-relaxed font-base dark:text-gray-100 text-gray-800';
+
+    this.Custom = {
+      [ActionSymbol]: new Tails(),
+    };
   }
   //#endregion
 
   //#region API Methods
-  public toString(): string {
-    return `${this.Base.toString()}`;
-  }
   //#endregion
 
   //#region Helpers

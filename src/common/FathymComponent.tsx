@@ -1,8 +1,10 @@
-import React from 'react';
-import { twMerge } from "tailwind-merge";
+import React, { useContext } from 'react';
 import ExpanderService from './ExpanderService';
 import FathymProperties from './FathymProperties';
-import Styles from './Styles';
+import Styles from './tailwind/Tails';
+import { ActionSymbol } from '../atoms/action/ActionSymbol';
+
+
 
 export default abstract class FathymComponent<
   TProps extends FathymProperties,
@@ -19,57 +21,8 @@ export default abstract class FathymComponent<
   }
 
   /**
-   * Load the class name instructions for this component.
-   *
-   * @returns The Styles to be used for the action.
-   */
-  protected abstract loadClassNameInstructions(): string[][];
-
-  /**
-   * Load the default Styles for this component.
-   *
-   * @returns The Styles to be used for the action.
-   */
-  protected abstract loadDefaultStyles(): Styles;
-
-  /**
    * Used to return the properties class for use in expand usage.
    */
   protected abstract loadPropsType(): new () => TProps;
-
-  protected mergeTails(className: string): string {
-    return twMerge(className);
-  }
-
-  protected resolveClassName(): string {
-    const defaultStyles = this.loadDefaultStyles();
-
-    const instructionSets: string[][] = this.loadClassNameInstructions();
-
-    const classNameSegments = instructionSets.reduce(
-      (tails, instructions) => {
-        let worked: string | Styles = { ...defaultStyles };
-
-        if (!!worked) {
-          worked = instructions.reduce((wrk, instruction) => {
-            return (wrk as Styles)[instruction];
-          }, worked as string | Styles);
-        }
-
-        if (!!worked) {
-          tails.push((worked as string) || '');
-        }
-
-        return tails;
-      },
-      []
-    );
-
-    classNameSegments.push(this.props.tails || '');
-
-    const className = this.mergeTails(classNameSegments.join(' '));
-
-    return className;
-  }
   //#endregion
 }

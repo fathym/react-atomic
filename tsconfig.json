@@ -27,5 +27,5 @@
     "**/*.stories.tsx",
     "./src/setupTests.ts"
   ],
-  "files": ["./src/index.ts"]
+  "files": ["./src/index.ts", "./src/common/tailwind/TailwindConfig.tsx", "src/atoms/action/ActionSymbol.tsx", "src/atoms/action/ActionTails.tsx", "./src/common/tailwind/TailwindContainer.tsx", "src/common/tailwind/useTailwindContext.tsx"]
 }

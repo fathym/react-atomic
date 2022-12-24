@@ -1,7 +1,7 @@
 import React from 'react';
 import FathymComponent from '../../common/FathymComponent';
 import FathymProperties from '../../common/FathymProperties';
-import Styles from '../../common/Styles';
+import Styles from '../../common/tailwind/Tails';
 
 export class TextProperties extends FathymProperties {
   public element?:
